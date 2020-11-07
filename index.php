@@ -8,9 +8,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="icon" type="text/css" href="log.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css">
 		.upd {
 			display: none;
+		}
+		.right {
+			position: absolute;
+			right: 0px;
 		}
 	</style>
   </head>
@@ -31,8 +36,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
-					<input type="" name="" placeholder="поиск" class="border rounded text-center px-3 ml-5 border-secondary">
+				<div class="col-4 d-flex">
+					<a href="admin.php"><button class="btn btn-primary">Добавить пост</button></a>
+					<input type="" name="" placeholder="поиск" class="border rounded text-center ml-3 px-3 border-secondary">
 				</div>
 				<div class="col-4">
 					<div class="row">
@@ -59,7 +65,7 @@
 	<div class="col-6 mx-auto" > <!--ГЛАВНЫЙ БЛОК-->
 		<div class="row"> 
 			<!--ЛЕВЫЙ БЛОК. ДИВ ДЛЯ ПОСТОВ-->
-			<div class="col-8 px-0 my-2"> 
+			<div class="col-8 px-0 my-2">
 							
 				<!--САМ ПОСТ-->
 				<?php
@@ -103,12 +109,12 @@
 									<input type="" name="id" placeholder="id" value="<?php echo $result["id"] ?>">
 									<input type="" name="text" placeholder="text" value="<?php echo $result["text"] ?>">
 									<input type="" name="img" placeholder="img" value="<?php echo $result["img"] ?>">
-									<button class="btn save">change</button>
+									<button class="btn save"><i class="far fa-check-circle"></i></button>
 								</form>
-								<button class="btn btn-success">Редактировать</button>
+								<button class="btn btn-successs"><i class="far fa-edit"></i></button>
 								<form action="delete.php" method="GET" class="ml-5">
 									<input style="display: none;" type="" name="id" value="<?php echo $result["id"] ?>">
-									<button class="btn btn-danger">Удалить</button>
+									<button class="btn right"><i class="far fa-trash-alt"></i></button>
 								</form>
 							</div>
 							
@@ -213,7 +219,7 @@
 	<script type="text/javascript">
 		let inp = document.querySelector('.inp').value;
 		let upd = document.querySelectorAll('.upd');
-		let upd_btn = document.querySelectorAll('.btn-success');
+		let upd_btn = document.querySelectorAll('.btn-successs');
 		let save_btn = document.querySelectorAll('.save');
 		for (let i = 0; i < inp; i++) { 
 			upd_btn[i].onclick = function() {
@@ -225,6 +231,8 @@
 		}
 		
 	</script>
+	<script src="https://kit.fontawesome.com/0c8d5f0b88.js" crossorigin="anonymous"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
